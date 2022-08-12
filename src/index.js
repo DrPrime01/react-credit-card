@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import PropTypes from 'prop-types';
 
 function CreditCard({cardinfo}) {
   return (
@@ -19,6 +20,10 @@ function Bank({bank}) {
   )
 }
 
+Bank.propTypes = {
+  bank: PropTypes.string
+}
+
 function CardNumber({cardNumber}) {
   return (
     <div className='card-number'>
@@ -26,6 +31,10 @@ function CardNumber({cardNumber}) {
       <span className='num'>0123</span>
     </div>
   )
+}
+
+CardNumber.propTypes = {
+  cardNumber: PropTypes.string
 }
 
 function ExpiryDate({date}) {
@@ -37,12 +46,20 @@ function ExpiryDate({date}) {
   )
 }
 
+ExpiryDate.propTypes = {
+  date: PropTypes.string
+}
+
 function CardHolder({name}) {
   return (
     <div className='card-holder-name'>
       {name}
     </div>
   )
+}
+
+CardHolder.propTypes = {
+  name: PropTypes.string
 }
 
 const cardDetails = {
